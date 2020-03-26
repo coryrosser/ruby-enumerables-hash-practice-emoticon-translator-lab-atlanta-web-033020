@@ -1,7 +1,18 @@
-# require modules here
+require 'yaml'
 
-def load_library
-  # code goes here
+def load_library(file)
+  emoticon = YAML.load_file('./lib/emoticons.yml')
+  
+  emote_hash = {
+    'get_meaning' => {},
+    'get_emoticon' => {}
+  }
+  emoticon.each_pair do |meaning, emote|
+    emote_hash['get_meaning'][emote[1]] = meaning
+    emote_hash['get_emoticon'][emote[0]] = emote[1]
+  end
+  emote_hash
+  
 end
 
 def get_japanese_emoticon
