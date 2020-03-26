@@ -21,6 +21,7 @@ def get_japanese_emoticon(file, emoticon)
   if !emoticon_hash
     return "Sorry, this is not a known emoticon"
   end
+  emoticon_hash
 end
 
 def get_english_meaning
